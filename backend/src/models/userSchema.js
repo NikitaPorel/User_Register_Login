@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  verified: {
+  verified: { 
     type: Boolean,
     default: "false",
   },
@@ -21,7 +21,6 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: "false",
   },
-
   token: {
     type: String,
     default: null,

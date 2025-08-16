@@ -12,7 +12,7 @@ export const hasToken = async (req, res, next) => {
       return res.status(401).json({
         success: false,
         message: "Access token is missing or invalid",
-      });
+      });   
     } else {
       const token = authHeader.split(" ")[1];
 
@@ -49,6 +49,10 @@ export const hasToken = async (req, res, next) => {
               message: "User logged out already",
             });
           }
+
+
+          // req.userId = id;
+          //   next();
         }
       });
     }

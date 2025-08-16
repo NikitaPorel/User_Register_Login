@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv'
 import { Connection } from './src/config/dbConnection.js';
 import route from './src/routes/userRoute.js';
+import todoRoute from './src/routes/todoRoute.js';
 dotenv.config()
 
 const app = express();
@@ -13,9 +14,8 @@ Connection()
 app.use(express.json())
 
 app.use('/user', route)
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use('/todo', todoRoute)
+
 
 app.listen(port,()=>{
     console.log(`server running at port ${port}`);

@@ -12,7 +12,7 @@ export const register = async (req, res) => {
     const existing = await userSchema.findOne({ email: email });
     if (existing) {
       return res.status(401).json({
-        success: false,
+        success: false,  
         message: "User Already Exists",
       });
     }
