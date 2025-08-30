@@ -6,11 +6,11 @@ import { verifyEmail } from '../verifyEmail/verifyEmail.js';
 import sessionSchema from '../models/sessionSchema.js';
 
 export const register = async (req, res) => {
-  try {
+  try {   
     const { userName, email, password } = req.body;
     console.log("test",userName, email, password)
     const existing = await userSchema.findOne({ email: email });
-    if (existing) {
+    if (existing) { 
       return res.status(401).json({
         success: false,  
         message: "User Already Exists",
